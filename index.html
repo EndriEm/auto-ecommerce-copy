@@ -11,15 +11,45 @@
   </head>
 
   <body>
-    <header class="main-header">
-      <section class="select-state-section">
-        <h2>CarTrader</h2>
-    
-      </section>
+    <header class="header">
+      <h1 class="title"><b>CarTrader</b></h1>
     </header>
-    <main>
-      
+    <main class="wrapper">
+      <div class="section-wrapper">
+        <form>
+          <select name="make" id="make">
+            <option value="">Manufacturer</option>
+            <option value="">Audi</option>
+            <option value="">Mercedes-Benz</option>
+            <option value="">Toyota</option>
+            <option value="">Tesla</option>
+            <option value="">Porsche</option>
+            <option value="">JEEP</option>
+            <option value="">Volvo</option>
+            <option value="">Jaguar</option>
+            <option value="">Range Rover</option>
+            <option value="">Nissan</option>
+          </select>
+
+          <select name="bodytype" id="bodytype">
+            <option value="">Body type</option>
+            <option value="">Sedan</option>
+            <option value="">Stationwagon</option>
+            <option value="">SUV</option>
+            <option value="">Coupe</option>
+            <option value="">Convertible</option>
+          </select>
+
+          <select name="fuel" id="fuel">
+            <option value="">Fuel</option>
+            <option value="">Diesel</option>
+            <option value="">Gasoline</option>
+            <option value="">Electric</option>
+          </select>
+          <button>Search</button>
+          <button>Add car</button>
+        </form>
+      </div>
     </main>
   </body>
-
 </html>
