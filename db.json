@@ -11,12 +11,12 @@
 },
 {
   "id": 2,
-  "make": "Mercedes-Benz",
-  "model": "500E",
-  "year": "1994",
+  "make": "Tesla",
+  "model": "S",
+  "year": "2020",
   "bodytype": "sedan",
-  "fuel": "gasoline",
-  "image": "https://i.ytimg.com/vi/GPLFW59Mj9Y/maxresdefault.jpg"
+  "fuel": "electric",
+  "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/03c34975-991c-45ee-a340-2b700bf7de01/bvlatuR/std/960x540/meet-your-tesla_model-s"
 },
 {
   "id": 3,
