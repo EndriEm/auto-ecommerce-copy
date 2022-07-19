@@ -1,75 +1,94 @@
 {
   "cars":[
-  {
-    "image":"https://cdn.jdpower.com/ChromeImageGallery/Expanded/Transparent/640/2022BUS03_640/2022BUS030009_640_01.png",
-    "id": 9582,
-    "year": 2008,
-    "make": "Buick",
-    "model": "Enclave",
-    "type": "SUV"
+{
+  "id": 1,
+  "make": "Jaguar",
+  "model": "XJ6",
+  "year": "1990",
+  "bodytype": "sedan",
+  "fuel": "gasoline",
+  "image": "https://cdn.motor1.com/images/mgl/vvM34/s1/4x3/jaguar-xj6-einzelstuck-mit-musik.webp"
 },
 {
-    "id": 9583,
-    "year": 2006,
-    "make": "MINI",
-    "model": "Convertible",
-    "type": "Convertible"
+  "id": 2,
+  "make": "Mercedes-Benz",
+  "model": "500E",
+  "year": "1994",
+  "bodytype": "sedan",
+  "fuel": "gasoline",
+  "image": "https://i.ytimg.com/vi/GPLFW59Mj9Y/maxresdefault.jpg"
 },
 {
-    "id": 9584,
-    "year": 2019,
-    "make": "Volvo",
-    "model": "XC90",
-    "type": "SUV"
+  "id": 3,
+  "make": "Toyota",
+  "model": "Supra",
+  "year": "1998",
+  "bodytype": "coupe",
+  "fuel": "gasoline",
+  "image": "https://cdn.wallpapersafari.com/21/33/bgLFGx.jpg"
 },
 {
-    "id": 9585,
-    "year": 1999,
-    "make": "Ford",
-    "model": "Taurus",
-    "type": "Sedan, Wagon"
+  "id": 4,
+  "make": "Audi",
+  "model": "RS6",
+  "year": "2018",
+  "bodytype": "station wagon",
+  "fuel": "gasoline",
+  "image": "https://www.motortrend.com/uploads/sites/5/2019/08/2020-Audi-RS-6-Avant-front-three-quarter-in-motion.jpg"
 },
 {
-    "id": 9586,
-    "year": 2020,
-    "make": "Volvo",
-    "model": "XC60",
-    "type": "SUV"
+  "id": 5,
+  "make": "Porsche",
+  "model": "911",
+  "year": "2019",
+  "bodytype": "cabriolet",
+  "fuel": "gasoline",
+  "image": "https://www.netcarshow.com/Porsche-911_Carrera_4S_Cabriolet-2019-wallpaper.jpg"
 },
 {
-    "id": 9587,
-    "year": 2006,
-    "make": "HUMMER",
-    "model": "H2",
-    "type": "SUV, Pickup"
+  "id": 6,
+  "make": "Range Rover",
+  "model": "Vogue",
+  "year": "2015",
+  "bodytype": "SUV",
+  "fuel": "diesel",
+  "image": "https://images.carexpert.com.au/resize/3000/-/app/uploads/2020/05/2020-Range-Rover-Vogue-P400-20.jpeg"
 },
 {
-    "id": 9588,
-    "year": 2016,
-    "make": "GMC",
-    "model": "Sierra 1500 Crew Cab",
-    "type": "Pickup"
+  "id": 7,
+  "make": "Volvo",
+  "model": "V90",
+  "year": "2017",
+  "bodytype": "station wagon",
+  "fuel": "diesel",
+  "image": "https://images.ctfassets.net/pmmyb8qsa37v/6rzLQVE0qE1Y8Ogwvm6K4y/211210d2c6a4142b15b06b30e817108a/image-0-compressed.jpg"
 },
 {
-    "id": 9589,
-    "year": 2008,
-    "make": "GMC",
-    "model": "Canyon Crew Cab",
-    "type": "Pickup"
+  "id": 8,
+  "make": "Nissan",
+  "model": "GTR",
+  "year": "2017",
+  "bodytype": "coupe",
+  "fuel": "gasoline",
+  "image": "https://www.sportwagen-erleben.de/templates/yootheme/cache/slider-sportwagen-mieten-Nissan-GTR-358c268f.jpeg"
 },
 {
-    "id": 9590,
-    "year": 2016,
-    "make": "Subaru",
-    "model": "Outback",
-    "type": "SUV"
+  "id": 9,
+  "make": "JEEP",
+  "model": "Wrangler",
+  "year": "2013",
+  "bodytype": "SUV",
+  "fuel": "gasoline",
+  "image": "https://cdn.motor1.com/images/mgl/LZbwQ/s1/2021-jeep-wrangler-rubicon-392-front-view.jpg"
 },
 {
-    "id": 9591,
-    "year": 2010,
-    "make": "Mitsubishi",
-    "model": "Outlander",
-    "type": "SUV"
+  "id": 10,
+  "make": "Mercedes-Benz",
+  "model": "SL",
+  "year": "1995",
+  "bodytype": "cabriolet",
+  "fuel": "gasoline",
+  "image": "https://i.pinimg.com/originals/fe/35/65/fe3565d16392304465231c596b016af5.jpg"
 }
-  ]
+]
 }
