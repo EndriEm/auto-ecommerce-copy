@@ -22,8 +22,7 @@ const cars: Car[] = [
   },
 ];
 type User = {
-  firstName: string,
-  lastName: string,
+  Name: string,
   id: string,
   password: string | number,
   posts: []
