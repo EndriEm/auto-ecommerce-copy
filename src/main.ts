@@ -69,7 +69,7 @@ function renderHeader() {
 function getCarsForTypes() {
 
   let filteredCars = state.cars.filter((car) => {
-    return car.types.toLowerCase().includes(state.byType.toLowerCase());
+    return car.bodytype.toLowerCase().includes(state.byBodyType.toLowerCase());
   });
   return filteredCars;
 }
@@ -82,10 +82,10 @@ function renderthecarlist() {
   for (let cars of getCarsForTypes()) {
     let liEl = document.createElement("li");
     let h2El = document.createElement("h2");
-    h2El.textContent = cars.types;
+    h2El.textContent = cars.bodytype;
     let makesEl = document.createElement("div");
     makesEl.className = "makes";
-    makesEl.textContent = cars.makes;
+    makesEl.textContent = cars.make;
     let yearsEl = document.createElement("section");
     yearsEl.classList.add("years");
     liEl.append(h2El, makesEl, yearsEl);
