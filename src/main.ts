@@ -1,46 +1,56 @@
 import './style.css'
 
 type Car = {
-  years:number;
-  makes:string;
-  types:string;
+
+  id: number,
+  make: string,
+  model: string,
+  year:string,
+  bodytype: string,
+  fuel: string,
+  image:string,
 }
 const cars: Car[] = [
   {
-    years:2020,
-    makes:"Audi",
-    types:"Convertible",
+   
+  id: 1,
+  make: "Jaguar",
+  model: "XJ6",
+  year: "1990",
+  bodytype: "sedan",
+  fuel: "gasoline",
+  image: "https://cdn.motor1.com/images/mgl/vvM34/s1/4x3/jaguar-xj6-einzelstuck-mit-musik.webp"
   },
 ];
 
 type State = {
-  byType: string;
-  byYears: string,
-  byMakes: string,
+  byManyfacture: string;
+  byBodyType: string,
+  byFuel: string,
   cars: Car[]
 };
 
 let state: State = {
-  byType: "",
-  byYears: "",
-  byMakes: "",
+  byManyfacture: "",
+  byBodyType: "",
+  byFuel: "",
   cars: [],
 };
 let mainEl = document.querySelector("main")
 
-function renderSearchBar() {
+function renderHeader() {
   let h1El = document.createElement("h1");
-  h1El.textContent = "List of Cars";
+  h1El.textContent = "CarTrader";
 
-  let searchBarHeader = document.createElement("header");
-  searchBarHeader.classList.add("search-bar");
+  let Header = document.createElement("header");
+  Header.classList.add("h1");
 
   let searchForm = document.createElement("form");
   searchForm.type = "search-car-form";
   searchForm.autocomplete = "off";
   searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    state.byType = searchForm["search-car"].value;
+    state.byManyfacture = searchForm["search-car"].value;
     render();
   });
 
@@ -52,8 +62,8 @@ function renderSearchBar() {
   searchInput.type = "search-cars";
   searchInput.name = "search-cars";
   searchForm.append(searchLabel, searchInput);
-  searchBarHeader.append(searchForm);
-  mainEl?.append(h1El, searchBarHeader);
+  Header.append(searchForm);
+  mainEl?.append(h1El, Header);
 }
 
 function getCarsForTypes() {
