@@ -4,11 +4,29 @@
   box-sizing: border-box;
 }
 header {
-  display: flex;
-  gap: 10px;
+  display: grid;
+  grid-auto-flow: column;
   margin: 15px;
   font-family:'Times New Roman', Times, serif;
 }
+.logo {
+  display: flex;
+}
+.right-side-nav {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  align-items: center;
+  gap: 50px;
+}
+
+.right-side-nav li {
+  list-style: none;
+}
+.right-side-nav li span {
+  font-size: 1.6rem;
+}
+
 form {
   display: grid;
   gap: 1rem;
@@ -66,4 +84,27 @@ button:hover {
   outline:none;
   background-color: rgba(137, 137, 137, 0.278);
   border-radius: 8px;
+}
+
+footer {
+  grid-area: footer;
+  padding: 20px;
+  display: grid;
+  grid-auto-flow: column;
+  background-color: rgba(110, 109, 109, 0.039);
+  align-items: center;
+}
+.footer-left {
+  display: grid;
+  justify-content: flex-start;
+  font-size: 0.8rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.footer-right {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
 }
