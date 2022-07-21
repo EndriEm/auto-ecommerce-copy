@@ -203,14 +203,7 @@ function renderSelectedItemPage(){
 
     let buttonEl = document.createElement('button')
     buttonEl.innerText = 'TradeCar'
-    buttonEl.className = 'add-to-cart-button'
     buttonEl.addEventListener('click', function(){
-        if(selectedItem?.onSale){
-        state.total = state.total + selectedItem.onSale
-    } else {
-        state.total = state.total + selectedItem.price
-    }
-
         render()
     })
 
@@ -335,10 +328,9 @@ function postCars( type: String, name: String, image: String, price: Number, yea
   
     carForm.append( typeInput, nameInput, imageInput, priceInput, yearInput, bodytypeInput,fuelInput, formCarbtn)
     sidebarEl.append(carForm)
-  
+
   }
   renderNewCar()
- 
 getCar()
 render()
 
