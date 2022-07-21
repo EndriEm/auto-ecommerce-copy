@@ -331,7 +331,7 @@ function postCars( type: String, name: String, image: String, price: Number, yea
 
     let formCarbtn = document.createElement('button')
     formCarbtn.type = 'submit'
-    formCarbtn.textContent = 'submit'
+    formCarbtn.textContent = 'Add New Car'
   
     carForm.append( typeInput, nameInput, imageInput, priceInput, yearInput, bodytypeInput,fuelInput, formCarbtn)
     sidebarEl.append(carForm)
