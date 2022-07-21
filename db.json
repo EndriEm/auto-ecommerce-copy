@@ -2,109 +2,174 @@
   "cars": [
     {
       "id": 1,
-      "make": "Jaguar",
-      "model": "XJ6",
+      "make": "XJ6",
+      "name": "Jaguar",
+      "image": "https://i.pinimg.com/originals/9b/b3/76/9bb376bbf015df989f41e3a1c628d7db.png",
+      "price": 15000,
+      "dateEntered": "2021/08/10",
+      "stock": 2,
       "year": "1990",
-      "bodytype": "sedan",
-      "fuel": "gasoline",
-      "image": "https://cdn.motor1.com/images/mgl/vvM34/s1/4x3/jaguar-xj6-einzelstuck-mit-musik.webp"
+    "bodytype": "sedan",
+    "fuel": "gasoline"
     },
     {
       "id": 2,
-      "make": "Tesla",
-      "model": "S",
+      "make": "S",
+      "name": "Tesla",
+      "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/03c34975-991c-45ee-a340-2b700bf7de01/bvlatuR/std/960x540/meet-your-tesla_model-s",
+      "price": 20000,
+      "dateEntered": "2021/08/10",
+      "stock": 1,
       "year": "2020",
-      "bodytype": "sedan",
-      "fuel": "electric",
-      "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/03c34975-991c-45ee-a340-2b700bf7de01/bvlatuR/std/960x540/meet-your-tesla_model-s"
+    "bodytype": "sedan",
+    "fuel": "electric"
     },
     {
       "id": 3,
-      "make": "Toyota",
-      "model": "Supra",
+      "type": "Supra",
+      "name": "Toyota",
+      "image": "https://e7.pngegg.com/pngimages/937/33/png-clipart-white-toyota-camry-xv40-2011-toyota-camry-2009-toyota-camry-2010-toyota-camry-se-car-toyota-car-front-miscellaneous-compact-car-thumbnail.png",
+      "price": 13000,
+      "dateEntered": "2021/05/06",
+      "stock": 5,
       "year": "1998",
-      "bodytype": "coupe",
-      "fuel": "gasoline",
-      "image": "https://cdn.wallpapersafari.com/21/33/bgLFGx.jpg"
+    "bodytype": "coupe",
+    "fuel": "gasoline"
     },
     {
       "id": 4,
-      "make": "Audi",
-      "model": "RS6",
+      "type": "AudiRS6",
+      "name": "Audi",
+      "image": "https://www.motorbiscuit.com/wp-content/uploads/2021/06/2021-Audi-A4-1-1024x768.jpg",
+      "price": 17000,
+      "dateEntered": "2021/07/10",
+      "stock": 7,
       "year": "2018",
-      "bodytype": "station wagon",
-      "fuel": "gasoline",
-      "image": "https://www.motortrend.com/uploads/sites/5/2019/08/2020-Audi-RS-6-Avant-front-three-quarter-in-motion.jpg"
+    "bodytype": "station wagon",
+    "fuel": "gasoline"
     },
     {
       "id": 5,
-      "make": "Porsche",
-      "model": "911",
+      "type": "Vogue",
+      "name": "Range Rover",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-white-range-rover-carcarvehicletransportland-rover-961524668735rkbjr.png",
+      "price": 22000,
+      "dateEntered": "2021/07/10",
+      "stock": 2,
       "year": "2019",
-      "bodytype": "cabriolet",
-      "fuel": "gasoline",
-      "image": "https://www.netcarshow.com/Porsche-911_Carrera_4S_Cabriolet-2019-wallpaper.jpg"
+    "bodytype": "cabriolet",
+    "fuel": "gasoline"
     },
     {
       "id": 6,
-      "make": "Range Rover",
-      "model": "Vogue",
+      "type": "911",
+      "name": "Porsche",
+      "image": "https://images.hgmsites.net/lrg/2020-porsche-911-carrera-4s-coupe-angular-front-exterior-view_100737975_l.jpg",
+      "price": 1400,
+      "dateEntered": "2021/06/11",
+      "stock": 1,
       "year": "2015",
-      "bodytype": "SUV",
-      "fuel": "diesel",
-      "image": "https://images.carexpert.com.au/resize/3000/-/app/uploads/2020/05/2020-Range-Rover-Vogue-P400-20.jpeg"
+    "bodytype": "SUV",
+    "fuel": "diesel"
     },
     {
       "id": 7,
-      "make": "Volvo",
-      "model": "V90",
+      "type": "V90",
+      "name": "Volvo",
+      "image": "https://www.pngkey.com/png/full/186-1860534_volvo-xc90-company-car-front-view.png",
+      "price": 9000,
+      "dateEntered": "2020/02/10",
+      "stock": 8,
       "year": "2017",
-      "bodytype": "station wagon",
-      "fuel": "diesel",
-      "image": "https://images.ctfassets.net/pmmyb8qsa37v/6rzLQVE0qE1Y8Ogwvm6K4y/211210d2c6a4142b15b06b30e817108a/image-0-compressed.jpg"
+    "bodytype": "station wagon",
+    "fuel": "diesel"
     },
     {
       "id": 8,
-      "make": "Nissan",
-      "model": "GTR",
+      "type": "GTR",
+      "name": "Nissan",
+      "image":"https://imgd-ct.aeplcdn.com/1056x660/n/nu0jpra_1422360.jpg?q=75",
+      "price": 7800,
+      "dateEntered": "2021/08/10",
+      "stock": 12,
       "year": "2017",
       "bodytype": "coupe",
-      "fuel": "gasoline",
-      "image": "https://www.sportwagen-erleben.de/templates/yootheme/cache/slider-sportwagen-mieten-Nissan-GTR-358c268f.jpeg"
+      "fuel": "gasoline"
     },
     {
       "id": 9,
-      "make": "JEEP",
-      "model": "Wrangler",
+      "type": "Wrangler",
+      "name": "JEEP",
+      "image": "https://imgd.aeplcdn.com/0x0/n/cw/ec/54437/2021-wrangler-exterior-right-front-three-quarter.jpeg",
+      "price": 15000,
+      "dateEntered": "2021/04/10",
+      "stock": 17,
       "year": "2013",
       "bodytype": "SUV",
-      "fuel": "gasoline",
-      "image": "https://cdn.motor1.com/images/mgl/LZbwQ/s1/2021-jeep-wrangler-rubicon-392-front-view.jpg"
+      "fuel": "gasoline"
     },
     {
       "id": 10,
-      "make": "Mercedes-Benz",
-      "model": "SL",
+      "type": "SL",
+      "name": "Mercedes-Benz",
+      "image": "https://images2.alphacoders.com/552/552276.jpg",
+      "price": 14000,
+      "dateEntered": "2021/08/01",
+      "stock": 6,
       "year": "1995",
       "bodytype": "cabriolet",
-      "fuel": "gasoline",
-      "image": "https://i.pinimg.com/originals/fe/35/65/fe3565d16392304465231c596b016af5.jpg"
+      "fuel": "gasoline"
     }
   ],
   "users": [
     {
-      "firstName": "Edona",
-      "lastName": "Jemini",
-      "id": "edona@email.com",
-      "password": "edona",
-      "posted": []
+      "firstName": "Nicolas",
+      "lastName": "Marcora",
+      "id": "nicolas@email.com",
+      "password": "nicolas",
+      "bag": []
     },
     {
-      "firstName": "Endri",
+      "firstName": "Paola",
+      "lastName": "Moreira",
+      "id": "paola@email.com",
+      "password": "paola",
+      "bag": []
+    },
+    {
+      "firstName": "gentri",
+      "lastName": "uka",
+      "id": "gerge",
+      "password": "123456",
+      "bag": []
+    },
+    {
+      "firstName": "EDONA",
       "lastName": "",
-      "id": "endri@email.com",
-      "password": "endri",
-      "posted": []
+      "id": "Rhqfy2W",
+      "password": "",
+      "bag": []
+    },
+    {
+      "firstName": "edona",
+      "lastName": "jemini",
+      "id": "edona@gmail.com",
+      "password": "123456",
+      "bag": []
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "id": "pLJtTfp",
+      "password": "",
+      "bag": []
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "id": "0IrgRjd",
+      "password": "",
+      "bag": []
     }
   ]
 }

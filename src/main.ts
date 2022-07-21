@@ -1,58 +1,56 @@
 import './style.css'
 
 type Car = {
-
   id: number,
-  make: string,
-  model: string,
-  year:string,
-  bodytype: string,
-  fuel: string,
-  image:string,
+  type: string,
+  name: string,
+  image: string,
+  price: number,
+  dateEntered: boolean,
+  stock: number
+  year:string
+  bodytype: string
+  fuel:string
 }
-const cars: Car[] = [
-  {
-  id: 1,
-  make: "Jaguar",
-  model: "XJ6",
-  year: "1990",
-  bodytype: "sedan",
-  fuel: "gasoline",
-  image: "https://cdn.motor1.com/images/mgl/vvM34/s1/4x3/jaguar-xj6-einzelstuck-mit-musik.webp"
-  },
-];
 type User = {
-  Name: string,
-  id: string,
-  password: string | number,
-  posts: []
-}
+    firstName: string,
+    lastName: string,
+    id: string,
+    password: string | number,
+    bag: []
+  }
+
 type State = {
-  cars: Car[];
-  users: User[];
-  searchTerm: string;
-  selectedCar: Car | null
-  page: 'store' | 'item' | 'filtered'
-  modal: 'search' | 'login' | ''
-  total: number
-};
+   cars: Car[];
+    users: User[];
+    searchTerm: string;
+    selectedItem: Car | null
+    page: 'store' | 'item' | 'filtered'
+    modal: 'search' | 'login' | ''
+    cart: Car[]
+    total: number
+}
 
 const state: State = {
     cars: [],
     users: [],
     searchTerm: "",
-    selectedCar: null,
+    selectedItem: null,
     modal: '',
     page: 'store',
+    cart: [],
     total: 0
 }
 
-function renderFilteredCars() {
-    let filteredCars = state.cars.filter(item => {
-        return item.make.toLowerCase().includes(state.searchTerm.toLowerCase())
+function renderFilteredItems() {
+
+    let filteredItems = state.cars.filter(item => {
+        return item.name.toLowerCase().includes(state.searchTerm.toLowerCase())
     })
-    return filteredCars
+    return filteredItems
   }
+
+
 
 function renderSearchModal () {
     let mainEl = document.querySelector('main')
@@ -74,8 +72,7 @@ function renderSearchModal () {
     let divEl = document.createElement('div')
     divEl.className = 'modal-search'
   
-    let titleEl = document.createElement('h2')
-    titleEl.textContent = 'Search your favourite car!'
+   
   
     let formEl = document.createElement('form')
     formEl.className = 'search-form'
@@ -87,92 +84,70 @@ function renderSearchModal () {
         render()
     })
 
+
     let inputEl = document.createElement('input')
     inputEl.placeholder = 'Search...'
     inputEl.className = 'search-input'
 
+
     formEl.append(inputEl)
-    divEl.append(titleEl, formEl)
+    divEl.append( formEl)
     containerEl.append(closeButton, divEl)
     wrapperEl.append(containerEl)
     mainEl.append(wrapperEl)
   }
 
-  
-function renderProfileModal () {
+
+function renderSelectedItemPage(){
     let mainEl = document.querySelector('main')
+    let selectedItem = state.selectedItem
 
-    let wrapperEl = document.createElement('div')
-    wrapperEl.className = 'modal-wrapper'
+    let divEl = document.createElement('div')
+    divEl.className = 'selected-item'
+
+    let imgEl = document.createElement('img')
+    imgEl.src = selectedItem.image
+    imgEl.alt = selectedItem.name
+    imgEl.width = 500
+
   
-    let containerEl = document.createElement('div')
-    containerEl.className = 'modal-container'
-  
-    let closeButton = document.createElement('button')
-    closeButton.textContent = 'X'
-    closeButton.className = 'modal-close-button'
-    closeButton.addEventListener('click', function () {
-      state.modal = ''
-      render()
-    })
-  
-    let titleEl = document.createElement('h2')
-    titleEl.textContent = 'Register'
-  
-    let formEl = document.createElement('form')
-    formEl.className = 'register-form'
-    formEl.addEventListener('submit', function (event) {
-        event.preventDefault()
-        fetch('http://localhost:4999/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                Name: inputNameEl.value,
-                id: inputIdEl.value,
-                password: inputPasswordEl.value,
-                bag: []
-        })
-    }).then(response => response.json())
-    .then(user => {
-        state.users.push(user)
-        state.modal = ''
-        render()
-    })
-})
+    let infoEl = document.createElement('div')
+    infoEl.className = 'selected-item-info'
     
-    let Name = document.createElement('a')
-    Name.textContent = 'Your Name:'
-    let inputNameEl = document.createElement('input')
-    inputNameEl.placeholder = 'Name...'
-    inputNameEl.className = 'search-input'
+    let h3El = document.createElement('h3')
+    h3El.innerText = selectedItem.name
+    h3El.className = 'selected-item-name'
+    let h4El = document.createElement('h4')
+    h4El.innerText = selectedItem?.bodytype
+    h4El.className = 'selected-item-bodytype'
+    let h4El2 = document.createElement('h4')
+    h4El2.innerText = selectedItem?.year
+    let h4El3 = document.createElement('h4')
+    h4El3.innerText = selectedItem?.fuel
+    let phone = document.createElement('p')
+    phone.textContent = 'Phone Number: 048334745849' 
 
-    let id = document.createElement('a')
-    id.textContent = 'Your Email:'
-    let inputIdEl = document.createElement('input')
-    inputIdEl.placeholder = 'Email...'
-    inputIdEl.className = 'search-input'
+    let priceEl = document.createElement('div')
+    priceEl.className = 'selected-item-price'
 
-    let password = document.createElement('a')
-    password.textContent = 'Your Password:'
-    let inputPasswordEl = document.createElement('input')
-    inputPasswordEl.placeholder = 'Password...'
-    inputPasswordEl.className = 'search-input'
 
-    let submitButton = document.createElement('button')
-    submitButton.textContent = 'Register'
-    submitButton.className = 'submit-button'
-    
-  
-    formEl.append(Name, inputNameEl, id, inputIdEl, password, inputPasswordEl, submitButton)
-    containerEl.append(closeButton, titleEl, formEl)
-    wrapperEl.append(containerEl)
-    mainEl.append(wrapperEl)
-  }
+    infoEl.append( h3El,h4El,h4El2,h4El3,priceEl,phone)
+    divEl.append(imgEl, infoEl)
+    mainEl.append(divEl)
+        
+}
 
-function getCars(){
-    fetch('http://localhost:4999/cars')
+
+function selectedItem(item: Car) {
+    state.selectedItem = item;
+}
+
+function deselectItem() {
+    state.selectedItem = null;
+}
+
+function getCar(){
+    fetch('http://localhost:3005/cars')
     .then(res => res.json())
     .then(data => {
         state.cars = data
@@ -180,76 +155,159 @@ function getCars(){
     })
 }
 
-function renderSelectedCarsPage(){
+function renderCar(){
     let mainEl = document.querySelector('main')
-    let selectedCar = state.cars
+    for(let item of renderFilteredItems()){
+        if(item.onSale){
+        let divEl = document.createElement('div')
+        divEl.className = 'store-item'
+        divEl.addEventListener('click', function(){
+            state.page = 'item'
+            selectedItem(item)
+            render()
+        })
+
+        let imgEl = document.createElement('img')
+        imgEl.src = item.image
+        imgEl.alt = item.name
+        imgEl.width = 250
+        let h3El = document.createElement('h3')
+        h3El.innerText = item.name
+        let div2El = document.createElement('div')
+        div2El.className = 'on-Sale'
+        let pEl = document.createElement('p')
+        pEl.innerText = `$${item.price}`
+        let spanEl = document.createElement('span')
+        spanEl.innerText = `$${item.onSale}`
+        div2El.append(pEl, spanEl)
+        divEl.append(imgEl, h3El, div2El)
+        mainEl.append(divEl)
+        }
+        else {
+
+        let divEl = document.createElement('div')
+        divEl.className = 'store-item'
+        divEl.addEventListener('click', function(){
+            state.page = 'item'
+            selectedItem(item)
+            render()
+        })
+        let imgEl = document.createElement('img')
+        imgEl.src = item.image
+        imgEl.alt = item.name
+        imgEl.width = 250
+        let h3El = document.createElement('h3')
+        h3El.innerText = item.name
+        let pEl = document.createElement('p')
+        pEl.innerText = `$${item.price}`
+        divEl.append(imgEl, h3El, pEl)
+        mainEl.append(divEl)
+        }
+    }
+}
+
+function renderSelectedItemPage(){
+    let mainEl = document.querySelector('main')
+    let selectedItem = state.selectedItem
 
     let divEl = document.createElement('div')
-    divEl.className = 'selected-car'
+    divEl.className = 'selected-item'
 
     let imgEl = document.createElement('img')
-    imgEl.src = selectedCar.image
-    imgEl.alt = selectedCar.make
+    imgEl.src = selectedItem.image
+    imgEl.alt = selectedItem.name
     imgEl.width = 500
 
-
+  
     let infoEl = document.createElement('div')
-    infoEl.className = 'selected-car-info'
-
+    infoEl.className = 'selected-item-info'
+    
     let h3El = document.createElement('h3')
-    h3El.innerText = selectedCar.make
-    h3El.className = 'selected-car-name'
+    h3El.innerText = selectedItem.name
+    h3El.className = 'selected-item-name'
+    let h4El = document.createElement('h4')
+    h4El.innerText = selectedItem?.bodytype
+    h4El.className = 'selected-item-bodytype'
+    let h4El2 = document.createElement('h4')
+    h4El2.innerText = selectedItem?.year
+    let h4El3 = document.createElement('h4')
+    h4El3.innerText = selectedItem?.fuel
+    let phone = document.createElement('p')
+    phone.textContent = 'Phone Number: 048334745849' 
 
     let priceEl = document.createElement('div')
-    priceEl.className = 'selected-car-price'
+    priceEl.className = 'selected-item-price'
 
-    if(selectedCar?.dateEntered === "2021/07/10"){
+    if(selectedItem?.dateEntered === "2021/07/10"){
         let pEl = document.createElement('p')
         pEl.innerText = `New!`
         pEl.className = "recently-added"
         priceEl.append(pEl)
     }
 
-   
-    infoEl.append(priceEl ,h3El, buttonEl)
+    if(selectedItem?.onSale){
+
+    let pEl = document.createElement('p')
+    pEl.innerText = `$${selectedItem.price}`
+    pEl.className = 'selected-item-price-alone'
+
+    let spanEl = document.createElement('span')
+    spanEl.innerText = `$${selectedItem.onSale}`
+    spanEl.className = 'selected-on-Sale'
+    priceEl.append(pEl, spanEl)
+    } else {
+        let pEl = document.createElement('p')
+        pEl.innerText = `$${selectedItem.price}`
+        priceEl.append(pEl)
+    }
+
+    let buttonEl = document.createElement('button')
+    buttonEl.innerText = 'TradeCar'
+    buttonEl.className = 'add-to-cart-button'
+    buttonEl.addEventListener('click', function(){
+        if(selectedItem?.onSale){
+        state.total = state.total + selectedItem.onSale
+    } else {
+        state.total = state.total + selectedItem.price
+    }
+
+        render()
+    })
+
+    
+    infoEl.append( h3El,h4El,h4El2,h4El3,priceEl,phone)
     divEl.append(imgEl, infoEl)
     mainEl.append(divEl)
         
 }
 
 
+
 function render(){
     let mainEl = document.querySelector('main')
     mainEl.innerHTML = ''
 
-  
+
     let searchEl = document.querySelector('.search-bar')
     searchEl.addEventListener('click', function(){
         state.modal = 'search'
         render()
     })
 
-    let loginEl = document.querySelector('.log-in')
-    loginEl.addEventListener('click', function(){
-        state.modal = 'login'
-        render()
-    })
-
 
     if (state.modal === 'search') renderSearchModal()
-    if (state.modal === 'login') renderProfileModal()
 
     if(state.page === 'item'){
-        renderSelectedCarPage()
+        renderSelectedItemPage()
     } else{
 
-    renderStoreCar()
+    renderCar()
     }
 }
 
 let logoEl = document.querySelector('.the-logo')
     logoEl?.addEventListener('click', function (){
-    deselectCar()
+    deselectItem()
     state.page = 'store'
     state.modal = ""
     state.searchTerm = ""
@@ -257,6 +315,6 @@ let logoEl = document.querySelector('.the-logo')
 })
 
 
-getStoreCars()
+getCar()
 render()
 

@@ -1,17 +1,62 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    "header" auto
+    "main" 1fr
+    "footer" 1fr/
+    1fr ;
+}
+
+/* header area */
+
 header {
+  grid-area: header;
+  padding: 10px;
+  background-color: black;
+}
+
+.the-logo {
+  display: flex;
+  text-decoration: none;
+  color: rgb(214, 214, 214);
+  font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+
+header nav {
   display: grid;
   grid-auto-flow: column;
-  margin: 15px;
-  font-family:'Times New Roman', Times, serif;
 }
-.logo {
+
+.left-side-nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}
+
+.left-side-nav-links {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
+.left-side-nav-links li {
+  list-style: none;
+}
+.left-side-nav-links a {
+  text-decoration: none;
+  color: blue;
+  font-size: 1.2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
 .right-side-nav {
   display: grid;
   grid-auto-flow: column;
@@ -25,86 +70,168 @@ header {
 }
 .right-side-nav li span {
   font-size: 1.6rem;
+  color: white;
+}
+.material-symbols-outlined-shopping-bag{
+  color: black;
 }
 
-form {
-  display: grid;
-  gap: 1rem;
-  justify-content: center;
-  border: 1px solid black;
-  display: grid;
-  gap: 1rem;
-  justify-content: center;
-  margin-left: 350px;
-  margin-right:350px;
-  
-}
-.border{
-  margin:50px;
-  border: 0px solid black;
-  background-color: white;
-  border-radius: 10px;
-  display: grid;
-  gap: 1rem;
-  justify-content: center;
-  padding:30px;
-  width: 400px;
-}
+/* main area */
 
-select {
-      background-color: white;
-      border-radius: 5px;
-      width: 520px;
-      height:40px;
-      display: flex;
-      font: bolder;
-      line-height: 1.5em;
-      padding: 0.5em 3.5em 0.5em 1em;
-      margin: 15px;           
-    
-}
-select:focus {
-  outline:none;
-  background-color: rgba(220, 220, 220, 0.278);
-  border-radius: 8px;
-}
-
-button {
-  width: 320px;
-  height: 30px;
-  background-color: #020305;
-  border: thin solid rgb(4, 4, 4);
-  border-radius: 25px;
-  background-color: var(--primary);
-  color:black;
-  margin-bottom: 10px;
-  justify-content:flex-end;
-}
-button:hover {
-  outline:none;
-  background-color: rgba(137, 137, 137, 0.278);
-  border-radius: 8px;
-}
-
-footer {
-  grid-area: footer;
+main {
+  position: relative;
+  grid-area: main;
   padding: 20px;
   display: grid;
-  grid-auto-flow: column;
-  background-color: rgba(110, 109, 109, 0.039);
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-.footer-left {
+.store-item {
   display: grid;
-  justify-content: flex-start;
-  font-size: 0.8rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  gap: 10px;
+  padding: 10px;
 }
-.footer-right {
+.store-item:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.on-Sale {
   display: grid;
-  grid-auto-flow: column;
-  justify-content: end;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.8rem;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
 }
+.on-Sale p {
+  text-decoration-line: line-through;
+}
+.on-Sale span {
+  color: red;
+  font-weight: bold;
+}
+.search-bar {
+  cursor: pointer;
+}
+.log-in {
+  cursor: pointer;
+}
+.shopping-bag {
+  cursor: pointer;
+}
+
+.selected-item {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 70px;
+}
+.selected-item-info {
+  padding-top: 50px;
+  display: grid;
+  grid-template-rows: 100px 200px auto;
+  align-items: start;
+}
+
+.selected-item-name {
+  font-size: 30px;
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgba(0, 0, 0, 0.561);
+}
+
+.selected-item-price {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  font-size: 2rem;
+  font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+.selected-item-price-alone {
+  text-decoration-line: line-through;
+}
+.add-to-cart-button {
+  all: unset;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 20px;
+  width: 10%;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+.modal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(104, 102, 102, 0.462);
+  padding: 2rem;
+  display: grid;
+  place-content: center;
+}
+
+.modal-container {
+  background-color: white;
+  padding: 3rem;
+  position: relative;
+  border-radius: 10px;
+  display: grid;
+  gap: 40px;
+  place-items: center;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  border: unset;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+.modal-search {
+  display: grid;
+  grid-gap: 20px;
+  place-items: center;
+}
+.modal-search h2 {
+  font-size: 2rem;
+  font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: black;
+}
+.modal-search input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+.register-form {
+  display: grid;
+  place-items: center;
+  grid-gap: 15px;
+  font-size: 1.2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: black;
+}
+.submit-button {
+  all: unset;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+}
+
