@@ -7,10 +7,10 @@ body {
   height: 100vh;
   display: grid;
   grid-template:
-    "header" auto
-    "main" 1fr
-    "footer" 1fr/
-    1fr ;
+    "header header header" auto
+    "main main sidebar" auto
+    "main main sidebar" 1fr/
+    1fr 1fr 1fr;
 }
 
 /* header area */
@@ -146,18 +146,6 @@ main {
 }
 .selected-item-price-alone {
   text-decoration-line: line-through;
-}
-.add-to-cart-button {
-  all: unset;
-  border: 1px solid rgb(119, 119, 119);
-  border-radius: 20px;
-  width: 10%;
-  text-align: center;
-  padding: 10px;
-  font-size: 1.2rem;
-  font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  background-color: white;
-  cursor: pointer;
 }
 
 

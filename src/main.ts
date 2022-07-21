@@ -6,40 +6,27 @@ type Car = {
   name: string,
   image: string,
   price: number,
-  dateEntered: boolean,
   stock: number
   year:string
   bodytype: string
   fuel:string
+  onSale:boolean
 }
-type User = {
-    firstName: string,
-    lastName: string,
-    id: string,
-    password: string | number,
-    bag: []
-  }
 
 type State = {
    cars: Car[];
-    users: User[];
     searchTerm: string;
     selectedItem: Car | null
     page: 'store' | 'item' | 'filtered'
-    modal: 'search' | 'login' | ''
-    cart: Car[]
-    total: number
+    modal: 'search' |''
 }
 
 const state: State = {
     cars: [],
-    users: [],
     searchTerm: "",
     selectedItem: null,
     modal: '',
     page: 'store',
-    cart: [],
-    total: 0
 }
 
 function renderFilteredItems() {
@@ -49,8 +36,6 @@ function renderFilteredItems() {
     })
     return filteredItems
   }
-
-
 
 function renderSearchModal () {
     let mainEl = document.querySelector('main')
@@ -72,8 +57,6 @@ function renderSearchModal () {
     let divEl = document.createElement('div')
     divEl.className = 'modal-search'
   
-   
-  
     let formEl = document.createElement('form')
     formEl.className = 'search-form'
     formEl.addEventListener('submit', function (event) {
@@ -84,11 +67,9 @@ function renderSearchModal () {
         render()
     })
 
-
     let inputEl = document.createElement('input')
     inputEl.placeholder = 'Search...'
     inputEl.className = 'search-input'
-
 
     formEl.append(inputEl)
     divEl.append( formEl)
@@ -137,7 +118,6 @@ function renderSelectedItemPage(){
         
 }
 
-
 function selectedItem(item: Car) {
     state.selectedItem = item;
 }
@@ -147,7 +127,7 @@ function deselectItem() {
 }
 
 function getCar(){
-    fetch('http://localhost:3005/cars')
+    fetch('http://localhost:4999/cars')
     .then(res => res.json())
     .then(data => {
         state.cars = data
@@ -313,7 +293,56 @@ let logoEl = document.querySelector('.the-logo')
     state.searchTerm = ""
     render()
 })
-
+function postCars(title: string, description: string,) {
+    let url = 'http://localhost:4999/cars'
+    let options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: title,
+        description: description,
+      })
+    }
+    fetch(url, options)
+      .then(resp => resp.json())
+      .then(newCar => {
+        state.cars.push(newCar)
+        render()
+      })
+      .catch(response => {
+        console.log(response);
+      });
+  }
+  function renderNewCar() {
+    let sidebarEl = document.querySelector('#app')
+    if (sidebarEl === null) return
+  
+    let carForm = document.createElement('form')
+    carForm.addEventListener('submit', function (event) {
+      event.preventDefault()
+      postCars(titleInput.value, descriptionInput.value,)
+      render()
+  
+    })
+    let titleInput = document.createElement('input')
+    titleInput.name = 'title'
+    titleInput.placeholder = 'Add car name'
+  
+    let descriptionInput = document.createElement('input')
+    descriptionInput.name = 'description'
+    descriptionInput.placeholder = 'Add movie description'
+  
+    let formCarbtn = document.createElement('button')
+    formCarbtn.type = 'submit'
+    formCarbtn.textContent = 'submit'
+  
+    carForm.append(titleInput, descriptionInput,  formCarbtn)
+    sidebarEl.append(carForm)
+  
+  }
+  renderNewCar()
 
 getCar()
 render()

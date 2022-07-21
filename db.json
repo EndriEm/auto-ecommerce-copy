@@ -120,56 +120,5 @@
       "bodytype": "cabriolet",
       "fuel": "gasoline"
     }
-  ],
-  "users": [
-    {
-      "firstName": "Nicolas",
-      "lastName": "Marcora",
-      "id": "nicolas@email.com",
-      "password": "nicolas",
-      "bag": []
-    },
-    {
-      "firstName": "Paola",
-      "lastName": "Moreira",
-      "id": "paola@email.com",
-      "password": "paola",
-      "bag": []
-    },
-    {
-      "firstName": "gentri",
-      "lastName": "uka",
-      "id": "gerge",
-      "password": "123456",
-      "bag": []
-    },
-    {
-      "firstName": "EDONA",
-      "lastName": "",
-      "id": "Rhqfy2W",
-      "password": "",
-      "bag": []
-    },
-    {
-      "firstName": "edona",
-      "lastName": "jemini",
-      "id": "edona@gmail.com",
-      "password": "123456",
-      "bag": []
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "id": "pLJtTfp",
-      "password": "",
-      "bag": []
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "id": "0IrgRjd",
-      "password": "",
-      "bag": []
-    }
   ]
 }
