@@ -288,7 +288,8 @@ function postCars( type: String, name: String, image: String, price: Number, yea
     let carForm = document.createElement('form')
     carForm.addEventListener('submit', function (event) {
       event.preventDefault()
-      postCars(typeInput.value, nameInput.value, imageInput.src, priceInput.value, bodytypeInput.value, yearInput.value, fuelInput.value)
+      postCars(typeInput.value, nameInput.value, imageInput.value, priceInput.value, bodytypeInput.value, yearInput.value, fuelInput.value)
+      carForm.reset()
       render()
   
     })
@@ -303,10 +304,10 @@ function postCars( type: String, name: String, image: String, price: Number, yea
     nameInput.required = true
     nameInput.placeholder = 'Add the car name'
   
-    let imageInput = document.createElement('img')
-    imageInput.src = 'Image'
-    nameInput.required = true
-    nameInput.placeholder = 'img URL'
+    let imageInput = document.createElement('input')
+    imageInput.name = 'Image'
+    imageInput.required = true
+    imageInput.placeholder = 'img URL'
 
     let priceInput = document.createElement('input')
    priceInput.type = 'Price'
@@ -337,7 +338,7 @@ function postCars( type: String, name: String, image: String, price: Number, yea
   
   }
   renderNewCar()
-
+ 
 getCar()
 render()
 

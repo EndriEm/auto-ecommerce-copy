@@ -99,36 +99,6 @@
       "year": "1995",
       "bodytype": "cabriolet",
       "fuel": "gasoline"
-    },
-    {
-      "type": "xdcfvgb",
-      "name": "dfgh",
-      "image": "http://localhost:5173/Image",
-      "price": "2345",
-      "year": "sdfgh",
-      "bodytype": "2345",
-      "fuel": "sdfgh",
-      "id": 11
-    },
-    {
-      "type": "xdcfvgb",
-      "name": "dfgh",
-      "image": "http://localhost:5173/Image",
-      "price": "2345",
-      "year": "sdfgh",
-      "bodytype": "2345",
-      "fuel": "sdfgh",
-      "id": 12
-    },
-    {
-      "type": "ghj",
-      "name": "gbhnj",
-      "image": "http://localhost:5173/Image",
-      "price": "34567",
-      "year": "cvbn",
-      "bodytype": "dcfvghj",
-      "fuel": "fghj",
-      "id": 14
     }
   ]
 }

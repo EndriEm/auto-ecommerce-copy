@@ -191,10 +191,15 @@ main {
   font-size: 1.2rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: black;
+  margin: 20px;
+  border: thin solid black;
+  padding: 10px;
+  border-radius: 5px;
 }
 .sidebar input{
   width: 50%;
   height: 30px;
+  margin:5px;
 }
 .sidebar button {
   all: unset;
@@ -208,4 +213,5 @@ main {
   background-color: white;
   cursor: pointer;
   color: black;
+  margin: 20px;
 }
