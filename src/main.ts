@@ -332,7 +332,7 @@ function postCars(title: string, description: string,) {
   
     let descriptionInput = document.createElement('input')
     descriptionInput.name = 'description'
-    descriptionInput.placeholder = 'Add movie description'
+    descriptionInput.placeholder = 'Add car description'
   
     let formCarbtn = document.createElement('button')
     formCarbtn.type = 'submit'
