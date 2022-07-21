@@ -76,8 +76,6 @@ header nav {
   color: black;
 }
 
-/* main area */
-
 main {
   position: relative;
   grid-area: main;
@@ -95,25 +93,8 @@ main {
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
-.on-Sale {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px;
-}
-.on-Sale p {
-  text-decoration-line: line-through;
-}
-.on-Sale span {
-  color: red;
-  font-weight: bold;
-}
+
 .search-bar {
-  cursor: pointer;
-}
-.log-in {
-  cursor: pointer;
-}
-.shopping-bag {
   cursor: pointer;
 }
 
@@ -201,7 +182,9 @@ main {
   font-size: 1.2rem;
   font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
-.register-form {
+
+
+.sidebar {
   display: grid;
   place-items: center;
   grid-gap: 15px;
@@ -209,11 +192,15 @@ main {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: black;
 }
-.submit-button {
+.sidebar input{
+  width: 50%;
+  height: 30px;
+}
+.sidebar button {
   all: unset;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 10px;
-  width: 50%;
+  width: 20%;
   text-align: center;
   padding: 10px;
   font-size: 1.2rem;
@@ -222,4 +209,3 @@ main {
   cursor: pointer;
   color: black;
 }
-
