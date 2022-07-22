@@ -99,16 +99,6 @@
       "year": "1995",
       "bodytype": "Cabriolet",
       "fuel": "Gasoline"
-    },
-    {
-      "type": "Bentley",
-      "name": "Azure",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlOM5w0BmuLt0QPAYp1MGhH_DbrYEAKAokA&usqp=CAU",
-      "price": "100000",
-      "year": "Cabriolet",
-      "bodytype": "2009",
-      "fuel": "Gasoline",
-      "id": 11
     }
   ]
 }
