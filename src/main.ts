@@ -211,6 +211,7 @@ function renderSelectedItemPage() {
 }
 
 function render() {
+
   let mainEl = document.querySelector("main");
   mainEl.innerHTML = "";
 
@@ -224,6 +225,8 @@ function render() {
 
   if (state.page === "item") {
     renderSelectedItemPage();
+
+
   } else {
     renderCar();
   }
@@ -275,8 +278,6 @@ function postCars(
 }
 function renderNewCar() {
   let sidebarEl = document.querySelector(".sidebar");
-  if (sidebarEl === null) return;
-
   let carForm = document.createElement("form");
   carForm.addEventListener("submit", function (event) {
     event.preventDefault();
